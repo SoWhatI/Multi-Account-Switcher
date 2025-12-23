@@ -110,6 +110,9 @@ async function saveCurrentCookie() {
                cookie.domain === parentDomain || 
                domain.endsWith(cookie.domain.replace(/^\./, ''));
       });
+    } else {
+      // 若没有父域名，则直接获取当前域名的Cookie
+      allCookies = await chrome.cookies.getAll({ domain: `${domain}` });
     }
     
     // 2. 获取当前页面的localStorage数据
