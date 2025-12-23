@@ -16,7 +16,7 @@
 - HTML + CSS（原生界面）
 
 ## 安装步骤
-### 方式二：打包安装（可选）
+### 方式一：打包安装
 1. **下载插件包**：从[Release页面](https://github.com/SoWhatI/Multi-Account-Switcher/releases)下载最新版本的插件包。
 2. **打开Chrome扩展页面**：在Chrome浏览器地址栏输入 `chrome://extensions/` 并回车。
 3. **开启开发者模式**：点击页面右上角的「开发者模式」开关，使其处于开启状态。
