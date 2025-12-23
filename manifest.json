@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Multi-Account Switcher",
+  "version": "1.0",
+  "description": "保存并切换网站的不同账号Cookie和LocalStorage",
+  "permissions": [
+    "cookies",
+    "storage",
+    "tabs",
+    "scripting"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "icon.png"
+  },
+  "icons": {
+    "128": "icon.png"
+  }
+}

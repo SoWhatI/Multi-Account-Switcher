@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Multi-Account Switcher</title>
+  <style>
+    body {
+      width: 300px;
+      padding: 15px;
+      font-family: Arial, sans-serif;
+    }
+    .container {
+      margin-bottom: 10px;
+    }
+    label {
+      font-weight: bold;
+      display: block;
+      margin-bottom: 5px;
+    }
+    input, select, button {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 10px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    button {
+      background-color: #4285f4;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #3367d6;
+    }
+    .tip {
+      font-size: 12px;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <label for="domain">当前网站域名</label>
+    <input type="text" id="domain" readonly placeholder="正在获取当前标签页域名...">
+    <div class="tip">该输入框为只读，自动获取当前标签页的域名</div>
+  </div>
+
+  <div class="container">
+    <label for="accountName">账号名称</label>
+    <input type="text" id="accountName" placeholder="请输入账号名称（如：账号1、工作账号）">
+    <div class="tip">用于标识不同的账号数据（Cookie + LocalStorage）</div>
+  </div>
+
+  <div class="container">
+    <button id="saveBtn">保存当前Cookie和LocalStorage到该账号</button>
+  </div>
+
+  <div class="container">
+    <label for="accountSelect">选择要切换的账号</label>
+    <select id="accountSelect">
+      <option value="">-- 暂无保存的账号 --</option>
+    </select>
+  </div>
+
+  <div class="container">
+    <button id="switchBtn">切换到选中账号的Cookie和LocalStorage</button>
+    <button id="deleteBtn" style="background-color: #ea4335;">删除选中账号的数据</button>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
