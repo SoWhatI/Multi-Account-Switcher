@@ -18,8 +18,9 @@
    ## 安装步骤
    ### 官方商店
    Edge：从[官方商店](https://microsoftedge.microsoft.com/addons/detail/oggfnfkooedbkhojaeikjnefhbkcflkc)获取
-   Chrome：申请中
    
+   Chrome：申请中
+
    ### 方式一：打包安装（推荐）
    1. **下载插件包**：从[Release页面](https://github.com/SoWhatI/Multi-Account-Switcher/releases)下载最新版本的插件包。
    2. **打开Chrome扩展页面**：在Chrome浏览器地址栏输入 `chrome://extensions/` 并回车。
