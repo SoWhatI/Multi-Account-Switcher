@@ -1,0 +1,152 @@
+{
+  "extensionName": {
+    "message": "Multi-Account Switcher",
+    "description": "Extension name"
+  },
+  "extensionDescription": {
+    "message": "Save and switch between different account cookies and LocalStorage for websites",
+    "description": "Extension description"
+  },
+  "currentDomainLabel": {
+    "message": "Current Website Domain",
+    "description": "Current website domain label"
+  },
+  "domainPlaceholder": {
+    "message": "Getting current tab domain...",
+    "description": "Domain input placeholder"
+  },
+  "domainTip": {
+    "message": "This input is read-only and automatically gets the domain of the current tab",
+    "description": "Domain input tip"
+  },
+  "accountNameLabel": {
+    "message": "Account Name",
+    "description": "Account name label"
+  },
+  "accountNamePlaceholder": {
+    "message": "Please enter account name (e.g., Account 1, Work Account)",
+    "description": "Account name input placeholder"
+  },
+  "accountNameTip": {
+    "message": "Used to identify different account data (Cookie + LocalStorage)",
+    "description": "Account name input tip"
+  },
+  "saveButton": {
+    "message": "Save Current Cookie and LocalStorage to this Account",
+    "description": "Save button text"
+  },
+  "accountSelectLabel": {
+    "message": "Select Account to Switch",
+    "description": "Account select label"
+  },
+  "noAccountOption": {
+    "message": "-- No saved accounts --",
+    "description": "No account option text"
+  },
+  "switchButton": {
+    "message": "Switch to Selected Account's Cookie and LocalStorage",
+    "description": "Switch button text"
+  },
+  "deleteButton": {
+    "message": "Delete Selected Account Data",
+    "description": "Delete button text"
+  },
+  "invalidDomainError": {
+    "message": "Unable to get valid domain from current page, cannot save Cookie and LocalStorage!",
+    "description": "Invalid domain error message"
+  },
+  "accountNameRequired": {
+    "message": "Please enter account name!",
+    "description": "Account name required message"
+  },
+  "noDataToSave": {
+    "message": "No Cookie and LocalStorage data available to save on current website!",
+    "description": "No data to save message"
+  },
+  "saveSuccess": {
+    "message": "Successfully saved Cookie and LocalStorage data for \"$ACCOUNT_NAME$\"!",
+    "description": "Save success message",
+    "placeholders": {
+      "account_name": {
+        "content": "$1",
+        "example": "Work Account"
+      }
+    }
+  },
+  "saveError": {
+    "message": "Failed to save Cookie and LocalStorage, please check console log!",
+    "description": "Save error message"
+  },
+  "switchInvalidDomain": {
+    "message": "Unable to get valid domain from current page, cannot switch Cookie and LocalStorage!",
+    "description": "Switch invalid domain message"
+  },
+  "selectAccount": {
+    "message": "Please select an account to switch!",
+    "description": "Select account message"
+  },
+  "accountDataNotFound": {
+    "message": "Cookie and LocalStorage data for \"$ACCOUNT_NAME$\" not found!",
+    "description": "Account data not found message",
+    "placeholders": {
+      "account_name": {
+        "content": "$1",
+        "example": "Work Account"
+      }
+    }
+  },
+  "switchSuccess": {
+    "message": "Successfully switched to Cookie and LocalStorage for \"$ACCOUNT_NAME$\", page has been refreshed!",
+    "description": "Switch success message",
+    "placeholders": {
+      "account_name": {
+        "content": "$1",
+        "example": "Work Account"
+      }
+    }
+  },
+  "switchError": {
+    "message": "Failed to switch Cookie and LocalStorage, please check console log!",
+    "description": "Switch error message"
+  },
+  "deleteInvalidDomain": {
+    "message": "Unable to get valid domain from current page, cannot delete account data!",
+    "description": "Delete invalid domain message"
+  },
+  "deleteSelectAccount": {
+    "message": "Please select an account to delete!",
+    "description": "Delete select account message"
+  },
+  "deleteConfirm": {
+    "message": "Are you sure you want to delete Cookie and LocalStorage data for \"$ACCOUNT_NAME$\"? This action cannot be undone!",
+    "description": "Delete confirm message",
+    "placeholders": {
+      "account_name": {
+        "content": "$1",
+        "example": "Work Account"
+      }
+    }
+  },
+  "deleteSuccess": {
+    "message": "Successfully deleted Cookie and LocalStorage data for \"$ACCOUNT_NAME$\"!",
+    "description": "Delete success message",
+    "placeholders": {
+      "account_name": {
+        "content": "$1",
+        "example": "Work Account"
+      }
+    }
+  },
+  "deleteError": {
+    "message": "Failed to delete account data, please check console log!",
+    "description": "Delete error message"
+  },
+  "domainFetchError": {
+    "message": "Failed to get domain",
+    "description": "Domain fetch error message"
+  },
+  "domainFetchFailure": {
+    "message": "Unable to get domain (not a web page)",
+    "description": "Domain fetch failure reason message"
+  }
+}

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html>
 <head>
   <meta charset="UTF-8">
   <title>Multi-Account Switcher</title>
@@ -42,15 +42,15 @@
 </head>
 <body>
   <div class="container">
-    <label for="domain">当前网站域名</label>
+    <label for="domain" id="currentDomainLabel">当前网站域名</label>
     <input type="text" id="domain" readonly placeholder="正在获取当前标签页域名...">
-    <div class="tip">该输入框为只读，自动获取当前标签页的域名</div>
+    <div class="tip" id="domainTip">该输入框为只读，自动获取当前标签页的域名</div>
   </div>
 
   <div class="container">
-    <label for="accountName">账号名称</label>
+    <label for="accountName" id="accountNameLabel">账号名称</label>
     <input type="text" id="accountName" placeholder="请输入账号名称（如：账号1、工作账号）">
-    <div class="tip">用于标识不同的账号数据（Cookie + LocalStorage）</div>
+    <div class="tip" id="accountNameTip">用于标识不同的账号数据（Cookie + LocalStorage）</div>
   </div>
 
   <div class="container">
@@ -58,7 +58,7 @@
   </div>
 
   <div class="container">
-    <label for="accountSelect">选择要切换的账号</label>
+    <label for="accountSelect" id="accountSelectLabel">选择要切换的账号</label>
     <select id="accountSelect">
       <option value="">-- 暂无保存的账号 --</option>
     </select>

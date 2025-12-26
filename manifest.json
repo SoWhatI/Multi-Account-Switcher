@@ -1,32 +1,23 @@
 {
   "manifest_version": 3,
-  "name": "Multi-Account Switcher",
+  "name": "__MSG_extensionName__",
   "version": "1.0",
-  "description": "保存并切换网站的不同账号Cookie和LocalStorage",
+  "description": "__MSG_extensionDescription__",
+  "default_locale": "zh_CN",
   "permissions": [
     "cookies",
     "storage",
     "tabs",
-    "scripting"
+    "scripting" 
   ],
   "host_permissions": [
     "<all_urls>"
   ],
   "action": {
     "default_popup": "popup.html",
-    "default_icon": {
-      "16": "icon16.png",
-      "24": "icon24.png",
-      "32": "icon32.png",
-      "48": "icon48.png",
-      "128": "icon.png"
-    }
+    "default_icon": "icon.png"
   },
   "icons": {
-    "16": "icon16.png",
-    "24": "icon24.png",
-    "32": "icon32.png",
-    "48": "icon48.png",
     "128": "icon.png"
   }
 }

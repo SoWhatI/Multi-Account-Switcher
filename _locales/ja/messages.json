@@ -1,0 +1,152 @@
+{
+  "extensionName": {
+    "message": "Multi-Account Switcher",
+    "description": "拡張機能名"
+  },
+  "extensionDescription": {
+    "message": "ウェブサイトの異なるアカウントのCookieとLocalStorageを保存・切り替え",
+    "description": "拡張機能の説明"
+  },
+  "currentDomainLabel": {
+    "message": "現在のウェブサイトドメイン",
+    "description": "現在のウェブサイトドメインラベル"
+  },
+  "domainPlaceholder": {
+    "message": "現在のタブのドメインを取得中...",
+    "description": "ドメイン入力のプレースホルダー"
+  },
+  "domainTip": {
+    "message": "この入力は読み取り専用で、現在のタブのドメインを自動的に取得します",
+    "description": "ドメイン入力のヒント"
+  },
+  "accountNameLabel": {
+    "message": "アカウント名",
+    "description": "アカウント名ラベル"
+  },
+  "accountNamePlaceholder": {
+    "message": "アカウント名を入力してください（例：アカウント1、仕事用アカウント）",
+    "description": "アカウント名入力のプレースホルダー"
+  },
+  "accountNameTip": {
+    "message": "異なるアカウントデータ（Cookie + LocalStorage）を識別するために使用",
+    "description": "アカウント名入力のヒント"
+  },
+  "saveButton": {
+    "message": "現在のCookieとLocalStorageをこのアカウントに保存",
+    "description": "保存ボタンのテキスト"
+  },
+  "accountSelectLabel": {
+    "message": "切り替えるアカウントを選択",
+    "description": "アカウント選択ラベル"
+  },
+  "noAccountOption": {
+    "message": "-- 保存されたアカウントがありません --",
+    "description": "アカウントなしオプションのテキスト"
+  },
+  "switchButton": {
+    "message": "選択したアカウントのCookieとLocalStorageに切り替える",
+    "description": "切り替えボタンのテキスト"
+  },
+  "deleteButton": {
+    "message": "選択したアカウントのデータを削除",
+    "description": "削除ボタンのテキスト"
+  },
+  "invalidDomainError": {
+    "message": "現在のページから有効なドメインを取得できません。CookieとLocalStorageを保存できません！",
+    "description": "無効なドメインエラーメッセージ"
+  },
+  "accountNameRequired": {
+    "message": "アカウント名を入力してください！",
+    "description": "アカウント名必須メッセージ"
+  },
+  "noDataToSave": {
+    "message": "現在のウェブサイトには保存可能なCookieとLocalStorageデータがありません！",
+    "description": "保存データなしメッセージ"
+  },
+  "saveSuccess": {
+    "message": "「$ACCOUNT_NAME$」のCookieとLocalStorageデータの保存に成功しました！",
+    "description": "保存成功メッセージ",
+    "placeholders": {
+      "account_name": {
+        "content": "$1",
+        "example": "仕事用アカウント"
+      }
+    }
+  },
+  "saveError": {
+    "message": "CookieとLocalStorageの保存に失敗しました。コンソールログを確認してください！",
+    "description": "保存エラーメッセージ"
+  },
+  "switchInvalidDomain": {
+    "message": "現在のページから有効なドメインを取得できません。CookieとLocalStorageを切り替えることができません！",
+    "description": "切り替え無効ドメインメッセージ"
+  },
+  "selectAccount": {
+    "message": "切り替えるアカウントを選択してください！",
+    "description": "アカウント選択メッセージ"
+  },
+  "accountDataNotFound": {
+    "message": "「$ACCOUNT_NAME$」のCookieとLocalStorageデータが見つかりません！",
+    "description": "アカウントデータ未検出メッセージ",
+    "placeholders": {
+      "account_name": {
+        "content": "$1",
+        "example": "仕事用アカウント"
+      }
+    }
+  },
+  "switchSuccess": {
+    "message": "「$ACCOUNT_NAME$」のCookieとLocalStorageへの切り替えに成功しました。ページが更新されました！",
+    "description": "切り替え成功メッセージ",
+    "placeholders": {
+      "account_name": {
+        "content": "$1",
+        "example": "仕事用アカウント"
+      }
+    }
+  },
+  "switchError": {
+    "message": "CookieとLocalStorageの切り替えに失敗しました。コンソールログを確認してください！",
+    "description": "切り替えエラーメッセージ"
+  },
+  "deleteInvalidDomain": {
+    "message": "現在のページから有効なドメインを取得できません。アカウントデータを削除できません！",
+    "description": "削除無効ドメインメッセージ"
+  },
+  "deleteSelectAccount": {
+    "message": "削除するアカウントを選択してください！",
+    "description": "削除アカウント選択メッセージ"
+  },
+  "deleteConfirm": {
+    "message": "本当に「$ACCOUNT_NAME$」のCookieとLocalStorageデータを削除しますか？この操作は元に戻せません！",
+    "description": "削除確認メッセージ",
+    "placeholders": {
+      "account_name": {
+        "content": "$1",
+        "example": "仕事用アカウント"
+      }
+    }
+  },
+  "deleteSuccess": {
+    "message": "「$ACCOUNT_NAME$」のCookieとLocalStorageデータの削除に成功しました！",
+    "description": "削除成功メッセージ",
+    "placeholders": {
+      "account_name": {
+        "content": "$1",
+        "example": "仕事用アカウント"
+      }
+    }
+  },
+  "deleteError": {
+    "message": "アカウントデータの削除に失敗しました。コンソールログを確認してください！",
+    "description": "削除エラーメッセージ"
+  },
+  "domainFetchError": {
+    "message": "ドメインの取得に失敗しました",
+    "description": "ドメイン取得エラーメッセージ"
+  },
+  "domainFetchFailure": {
+    "message": "ドメインを取得できません（ウェブページではありません）",
+    "description": "ドメイン取得失敗理由メッセージ"
+  }
+}

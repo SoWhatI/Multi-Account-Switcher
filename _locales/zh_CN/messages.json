@@ -1,0 +1,152 @@
+{
+  "extensionName": {
+    "message": "Multi-Account Switcher",
+    "description": "扩展程序名称"
+  },
+  "extensionDescription": {
+    "message": "保存并切换网站的不同账号Cookie和LocalStorage",
+    "description": "扩展程序描述"
+  },
+  "currentDomainLabel": {
+    "message": "当前网站域名",
+    "description": "当前网站域名标签"
+  },
+  "domainPlaceholder": {
+    "message": "正在获取当前标签页域名...",
+    "description": "域名输入框占位符"
+  },
+  "domainTip": {
+    "message": "该输入框为只读，自动获取当前标签页的域名",
+    "description": "域名输入框提示"
+  },
+  "accountNameLabel": {
+    "message": "账号名称",
+    "description": "账号名称标签"
+  },
+  "accountNamePlaceholder": {
+    "message": "请输入账号名称（如：账号1、工作账号）",
+    "description": "账号名称输入框占位符"
+  },
+  "accountNameTip": {
+    "message": "用于标识不同的账号数据（Cookie + LocalStorage）",
+    "description": "账号名称输入框提示"
+  },
+  "saveButton": {
+    "message": "保存当前Cookie和LocalStorage到该账号",
+    "description": "保存按钮文本"
+  },
+  "accountSelectLabel": {
+    "message": "选择要切换的账号",
+    "description": "账号选择标签"
+  },
+  "noAccountOption": {
+    "message": "-- 暂无保存的账号 --",
+    "description": "无账号选项文本"
+  },
+  "switchButton": {
+    "message": "切换到选中账号的Cookie和LocalStorage",
+    "description": "切换按钮文本"
+  },
+  "deleteButton": {
+    "message": "删除选中账号的数据",
+    "description": "删除按钮文本"
+  },
+  "invalidDomainError": {
+    "message": "当前页面无法获取有效域名，无法保存Cookie和LocalStorage！",
+    "description": "无效域名错误提示"
+  },
+  "accountNameRequired": {
+    "message": "请输入账号名称！",
+    "description": "账号名称必填提示"
+  },
+  "noDataToSave": {
+    "message": "当前网站暂无Cookie和LocalStorage数据可保存！",
+    "description": "无数据可保存提示"
+  },
+  "saveSuccess": {
+    "message": "成功保存“$ACCOUNT_NAME$”的Cookie和LocalStorage数据！",
+    "description": "保存成功提示",
+    "placeholders": {
+      "account_name": {
+        "content": "$1",
+        "example": "工作账号"
+      }
+    }
+  },
+  "saveError": {
+    "message": "保存Cookie和LocalStorage失败，请查看控制台日志！",
+    "description": "保存失败提示"
+  },
+  "switchInvalidDomain": {
+    "message": "当前页面无法获取有效域名，无法切换Cookie和LocalStorage！",
+    "description": "切换时无效域名错误提示"
+  },
+  "selectAccount": {
+    "message": "请选择要切换的账号！",
+    "description": "选择账号提示"
+  },
+  "accountDataNotFound": {
+    "message": "未找到“$ACCOUNT_NAME$”的Cookie和LocalStorage数据！",
+    "description": "账号数据未找到提示",
+    "placeholders": {
+      "account_name": {
+        "content": "$1",
+        "example": "工作账号"
+      }
+    }
+  },
+  "switchSuccess": {
+    "message": "已成功切换到“$ACCOUNT_NAME$”的Cookie和LocalStorage，页面已刷新！",
+    "description": "切换成功提示",
+    "placeholders": {
+      "account_name": {
+        "content": "$1",
+        "example": "工作账号"
+      }
+    }
+  },
+  "switchError": {
+    "message": "切换Cookie和LocalStorage失败，请查看控制台日志！",
+    "description": "切换失败提示"
+  },
+  "deleteInvalidDomain": {
+    "message": "当前页面无法获取有效域名，无法删除账号数据！",
+    "description": "删除时无效域名错误提示"
+  },
+  "deleteSelectAccount": {
+    "message": "请选择要删除的账号！",
+    "description": "删除时选择账号提示"
+  },
+  "deleteConfirm": {
+    "message": "确定要删除“$ACCOUNT_NAME$”的Cookie和LocalStorage数据吗？此操作不可恢复！",
+    "description": "删除确认提示",
+    "placeholders": {
+      "account_name": {
+        "content": "$1",
+        "example": "工作账号"
+      }
+    }
+  },
+  "deleteSuccess": {
+    "message": "已成功删除“$ACCOUNT_NAME$”的Cookie和LocalStorage数据！",
+    "description": "删除成功提示",
+    "placeholders": {
+      "account_name": {
+        "content": "$1",
+        "example": "工作账号"
+      }
+    }
+  },
+  "deleteError": {
+    "message": "删除账号数据失败，请查看控制台日志！",
+    "description": "删除失败提示"
+  },
+  "domainFetchError": {
+    "message": "获取域名失败",
+    "description": "获取域名失败提示"
+  },
+  "domainFetchFailure": {
+    "message": "无法获取域名（非网页页面）",
+    "description": "获取域名失败原因提示"
+  }
+}

@@ -1,12 +1,32 @@
 // 页面加载完成后执行
 document.addEventListener('DOMContentLoaded', async () => {
-  // 1. 获取当前标签页的域名并显示
+  // 1. 设置国际化界面文本
+  setLocalizedTexts();
+  // 2. 获取当前标签页的域名并显示
   await initCurrentDomain();
-  // 2. 加载已保存的账号列表
+  // 3. 加载已保存的账号列表
   await loadAccountList();
-  // 3. 绑定按钮事件
+  // 4. 绑定按钮事件
   bindEvents();
 });
+
+/**
+ * 设置国际化界面文本
+ */
+function setLocalizedTexts() {
+  // 设置标签文本
+  document.getElementById('currentDomainLabel').textContent = chrome.i18n.getMessage('currentDomainLabel');
+  document.getElementById('domain').placeholder = chrome.i18n.getMessage('domainPlaceholder');
+  document.getElementById('domainTip').textContent = chrome.i18n.getMessage('domainTip');
+  document.getElementById('accountNameLabel').textContent = chrome.i18n.getMessage('accountNameLabel');
+  document.getElementById('accountName').placeholder = chrome.i18n.getMessage('accountNamePlaceholder');
+  document.getElementById('accountNameTip').textContent = chrome.i18n.getMessage('accountNameTip');
+  document.getElementById('saveBtn').textContent = chrome.i18n.getMessage('saveButton');
+  document.getElementById('accountSelectLabel').textContent = chrome.i18n.getMessage('accountSelectLabel');
+  document.querySelector('#accountSelect option').textContent = chrome.i18n.getMessage('noAccountOption');
+  document.getElementById('switchBtn').textContent = chrome.i18n.getMessage('switchButton');
+  document.getElementById('deleteBtn').textContent = chrome.i18n.getMessage('deleteButton');
+}
 
 /**
  * 获取当前标签页的域名
@@ -16,7 +36,7 @@ async function initCurrentDomain() {
     // 获取当前激活的标签页
     const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
     if (!tab.url) {
-      document.getElementById('domain').value = '无法获取域名（非网页页面）';
+      document.getElementById('domain').value = chrome.i18n.getMessage('domainFetchFailure');
       return;
     }
     // 解析URL获取域名（如：https://www.baidu.com → baidu.com）
@@ -24,7 +44,7 @@ async function initCurrentDomain() {
     const domain = url.hostname;
     document.getElementById('domain').value = domain;
   } catch (error) {
-    document.getElementById('domain').value = '获取域名失败';
+    document.getElementById('domain').value = chrome.i18n.getMessage('domainFetchError');
     console.error('获取当前标签页域名失败：', error);
   }
 }
@@ -84,12 +104,12 @@ async function saveCurrentCookie() {
   const accountName = document.getElementById('accountName').value.trim();
 
   // 校验参数
-  if (!domain || domain.includes('无法获取') || domain.includes('获取失败')) {
-    alert('当前页面无法获取有效域名，无法保存Cookie和LocalStorage！');
+  if (!domain || domain.includes(chrome.i18n.getMessage('domainFetchFailure').replace('（非网页页面）', '')) || domain.includes(chrome.i18n.getMessage('domainFetchError'))) {
+    alert(chrome.i18n.getMessage('invalidDomainError'));
     return;
   }
   if (!accountName) {
-    alert('请输入账号名称！');
+    alert(chrome.i18n.getMessage('accountNameRequired'));
     return;
   }
 
@@ -120,7 +140,7 @@ async function saveCurrentCookie() {
     
     // 3. 检查是否有数据可保存
     if (allCookies.length === 0 && Object.keys(localStorageData).length === 0) {
-      alert('当前网站暂无Cookie和LocalStorage数据可保存！');
+      alert(chrome.i18n.getMessage('noDataToSave'));
       return;
     }
 
@@ -140,14 +160,14 @@ async function saveCurrentCookie() {
     // 6. 存储到Chrome本地存储
     await chrome.storage.local.set({ cookieAccounts: cookieAccounts });
 
-    alert(`成功保存“${accountName}”的Cookie和LocalStorage数据！`);
+    alert(chrome.i18n.getMessage('saveSuccess', [accountName]));
     // 刷新账号列表
     await loadAccountList();
     // 清空账号名称输入框
     document.getElementById('accountName').value = '';
   } catch (error) {
     console.error('保存Cookie和LocalStorage失败：', error);
-    alert('保存Cookie和LocalStorage失败，请查看控制台日志！');
+    alert(chrome.i18n.getMessage('saveError'));
   }
 }
 
@@ -160,12 +180,12 @@ async function switchToSelectedAccount() {
   const selectedAccount = accountSelect.value;
 
   // 校验参数
-  if (!domain || domain.includes('无法获取') || domain.includes('获取失败')) {
-    alert('当前页面无法获取有效域名，无法切换Cookie和LocalStorage！');
+  if (!domain || domain.includes(chrome.i18n.getMessage('domainFetchFailure').replace('（非网页页面）', '')) || domain.includes(chrome.i18n.getMessage('domainFetchError'))) {
+    alert(chrome.i18n.getMessage('switchInvalidDomain'));
     return;
   }
   if (!selectedAccount) {
-    alert('请选择要切换的账号！');
+    alert(chrome.i18n.getMessage('selectAccount'));
     return;
   }
 
@@ -177,7 +197,7 @@ async function switchToSelectedAccount() {
 
     if (!targetAccountData || 
         (targetAccountData.cookies.length === 0 && Object.keys(targetAccountData.localStorage).length === 0)) {
-      alert(`未找到“${selectedAccount}”的Cookie和LocalStorage数据！`);
+      alert(chrome.i18n.getMessage('accountDataNotFound', [selectedAccount]));
       return;
     }
 
@@ -220,10 +240,10 @@ async function switchToSelectedAccount() {
     const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
     await chrome.tabs.reload(tab.id);
 
-    alert(`已成功切换到“${selectedAccount}”的Cookie和LocalStorage，页面已刷新！`);
+    alert(chrome.i18n.getMessage('switchSuccess', [selectedAccount]));
   } catch (error) {
     console.error('切换Cookie和LocalStorage失败：', error);
-    alert('切换Cookie和LocalStorage失败，请查看控制台日志！');
+    alert(chrome.i18n.getMessage('switchError'));
   }
 }
 
@@ -236,16 +256,16 @@ async function deleteSelectedAccount() {
   const selectedAccount = accountSelect.value;
 
   // 校验参数
-  if (!domain || domain.includes('无法获取') || domain.includes('获取失败')) {
-    alert('当前页面无法获取有效域名，无法删除账号数据！');
+  if (!domain || domain.includes(chrome.i18n.getMessage('domainFetchFailure').replace('（非网页页面）', '')) || domain.includes(chrome.i18n.getMessage('domainFetchError'))) {
+    alert(chrome.i18n.getMessage('deleteInvalidDomain'));
     return;
   }
   if (!selectedAccount) {
-    alert('请选择要删除的账号！');
+    alert(chrome.i18n.getMessage('deleteSelectAccount'));
     return;
   }
 
-  if (!confirm(`确定要删除“${selectedAccount}”的Cookie和LocalStorage数据吗？此操作不可恢复！`)) {
+  if (!confirm(chrome.i18n.getMessage('deleteConfirm', [selectedAccount]))) {
     return;
   }
 
@@ -263,15 +283,15 @@ async function deleteSelectedAccount() {
       }
       // 3. 保存修改后的数据
       await chrome.storage.local.set({ cookieAccounts: cookieAccounts });
-      alert(`已成功删除“${selectedAccount}”的Cookie和LocalStorage数据！`);
+      alert(chrome.i18n.getMessage('deleteSuccess', [selectedAccount]));
       // 4. 刷新账号列表
       await loadAccountList();
     } else {
-      alert(`未找到“${selectedAccount}”的账号数据！`);
+      alert(chrome.i18n.getMessage('accountDataNotFound', [selectedAccount]));
     }
   } catch (error) {
     console.error('删除账号数据失败：', error);
-    alert('删除账号数据失败，请查看控制台日志！');
+    alert(chrome.i18n.getMessage('deleteError'));
   }
 }
 
